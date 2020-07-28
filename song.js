@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
 });
 
 const artistQuery = artistName => {
-    connection.query(`SELECT * FROM top5000 WHERE artist = ${artistName}`, (err, data) => {
+    connection.query(`SELECT * FROM top5000 WHERE artist = "${artistName}"`, (err, data) => {
         if (err) throw err;
         console.log(data);
     });
